@@ -1,1 +1,34 @@
-<!-- Crear el archivo listar.html -->
+{% extends "base.html" %}
+
+{% block title %} Listar Productos {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Listar Productos</h1>
+    <ul class="list-group">
+        {% for producto in productos %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <span class="nombre">{{ producto.nombre }}</span> - 
+                <span class="precio">{{ producto.precio }}</span> - 
+                <span class="cantidad">{{ producto.cantidad }}</span>
+            </div>
+            <div class="btn-group" role="group">
+                <form method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary" formaction="{% url 'editar_producto' producto.pk %}">Editar</button>
+                </form>
+                <form method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" formaction="{% url 'eliminar_producto' producto.pk %}">Eliminar</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="{% url 'crear_producto' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success mt-3">Crear Producto</button>
+    </form>
+</div>
+{% endblock %}
