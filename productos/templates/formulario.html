@@ -1,12 +1,18 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %} Formulario Producto {% endblock %}
 
 {% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'productos/styleFormulario.css' %}">
+</head>
 <h1>{{ form.instance.pk|default:"Crear" }} Producto</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <section class="container">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </section>
 </form>
 {% endblock %}

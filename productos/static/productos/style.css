@@ -1,4 +1,11 @@
 /* Estilos para la lista de productos */
+h1{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 24px;
+
+}
 .list-group {
     list-style-type: none;
     padding: 0;
@@ -33,6 +40,7 @@
 }
 
 .btn-primary {
+    margin-right: 20px;
     background-color: #007bff;
     color: white;
 }

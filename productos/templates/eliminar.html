@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Eliminar Producto</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'productos/styleEliminar.css' %}">
 </head>
 <body>
     <h1>Eliminar Producto</h1>
     <p>¿Estás seguro de que deseas eliminar el producto "{{ producto.nombre }}"?</p>
-    <form method="post">
+    
+    <form method="post" class="container">
         {% csrf_token %}
-        <button type="submit" name="confirmar">Confirmar</button>
-        <button type="submit" name="cancelar">Cancelar</button>
+        <button type="submit" name="confirmar" class="btn btn-primary">Confirmar</button>
+        <button type="submit" name="cancelar" class="btn btn-danger">Cancelar</button>
     </form>
 </body>
 </html>
