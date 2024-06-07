@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Importar Productos desde CSV {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Importar Productos desde CSV</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="csv_file" class="form-label">Seleccione un archivo CSV</label>
+            <input type="file" name="csv_file" id="csv_file" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Importar</button>
+    </form>
+</div>
+{% endblock %}

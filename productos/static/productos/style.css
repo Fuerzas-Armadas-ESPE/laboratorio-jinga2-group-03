@@ -1,224 +1,76 @@
-/* Estilos para la lista de productos */
-h1{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    text-align: center;
-    font-size: 24px;
+/* style.css */
 
-}
-.list-group {
-    list-style-type: none;
-    padding: 0;
+/* Estilos generales para todos los elementos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa !important; /* !important para prioridad */
+    color: #333;
 }
 
-.list-group-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.container-fluid {
+    padding: 20px;
 }
 
-.producto-nombre {
-    font-weight: bold;
-}
-
-.producto-precio {
-    color: green;
-}
-
-.producto-cantidad {
-    color: blue;
-}
-
-/* Estilos para los botones */
-.btn {
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary {
-    margin-right: 20px;
-    background-color: #007bff;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-danger:hover {
-    background-color: #c82333;
-}
-
-.btn-success {
-    background-color: #28a745;
-    color: white;
-}
-
-.btn-success:hover {
-    background-color: #218838;
-}
-
-
-/* Estilos para la tabla del formulario */
-.form-table {
-    width: 100%;
-    border-collapse: collapse;
+.navbar {
     margin-bottom: 20px;
 }
 
-.form-table th,
-.form-table td {
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
+.navbar-brand {
+    font-size: 1.5rem;
 }
 
-.form-table th {
-    background-color: #f2f2f2;
-    text-align: left;
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
 }
 
-.form-table td {
-    background-color: #ffffff;
-}
-
-/* Estilos para los inputs del formulario */
-.form-input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Estilos para los botones del formulario */
-.form-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form-button:hover {
-    background-color: #0056b3;
-}
-
-
-/* Estilos para la lista de productos */
-.list-group {
-    list-style-type: none;
-    padding: 0;
-}
-
-.list-group-item {
-    border: 1px solid #dee2e6;
-    margin-bottom: 10px;
-}
-
-.nombre {
-    font-weight: bold;
-}
-
-.precio {
-    color: green;
-}
-
-.cantidad {
-    color: blue;
-}
-
-/* Estilos para los botones */
-.btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
+/* Estilos para botones */
 .btn-primary {
-    background-color: #007bff;
+    background-color: #007bff !important; /* !important para prioridad */
+    border-color: #007bff !important; /* !important para prioridad */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3 !important; /* !important para prioridad */
+    border-color: #0056b3 !important; /* !important para prioridad */
+}
+
+.btn-secondary {
+    background-color: #6c757d !important; /* !important para prioridad */
+    border-color: #6c757d !important; /* !important para prioridad */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268 !important; /* !important para prioridad */
+    border-color: #5a6268 !important; /* !important para prioridad */
+}
+
+/* Cambiamos el color de fondo y texto para los botones de guardar */
+.btn-guardar {
+    background-color: #2f0323 !important; /* !important para prioridad */
+    border-color: #9ba79e !important; /* !important para prioridad */
+    color: #fff !important; /* !important para prioridad */
+}
+
+.btn-guardar:hover {
+    background-color: #5a1742 !important; /* !important para prioridad */
+    border-color: #c1912b !important; /* !important para prioridad */
+}
+
+/* Agrega más estilos según sea necesario */
+/* style.css */
+
+/* Estilos para botones personalizados */
+.btn-custom {
+    background-color: #4CAF50; /* Verde */
     color: white;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-success {
-    background-color: #28a745;
-    color: white;
-}
-
-/* Estilos adicionales */
-.btn-group {
-    display: flex;
-    align-items: center;
-}
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 20px;
-}
-
-button {
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Estilos para la lista de productos */
-.list-group {
-    list-style-type: none;
-    padding: 0;
-}
-
-.producto-nombre {
-    font-weight: bold;
-}
-
-.producto-precio {
-    color: green;
-}
-
-.producto-cantidad {
-    color: blue;
-}
-
-/* Estilos para los botones */
-.btn {
     padding: 10px 20px;
-    border-radius: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    color: white;
+.btn-custom:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
 }
-
-.btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-success {
-    background-color: #28a745;
-    color: white;
-}
-

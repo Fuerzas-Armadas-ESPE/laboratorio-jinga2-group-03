@@ -1,4 +1,3 @@
-<!-- Crear el archivo base.html  -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -6,20 +5,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-        Inventario
-        {% endblock %}
-    </title>
+    <title>{% block title %}Inventario{% endblock %}</title>
+    <!-- Enlaza los estilos de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
- 
+    <!-- Enlaza tu archivo de estilos personalizado -->
     <link rel="stylesheet" type="text/css" href="{% static 'productos/style.css' %}">
+    
 </head>
 <body>
-    <div class="container">
-        {% block content %} 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Inventario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listar_productos' %}">Listar Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crear_producto' %}">Crear Producto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'exportar_productos_csv' %}">Exportar Productos CSV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'importar_productos_csv' %}">Importar Productos CSV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        {% block content %}
         {% endblock %}
     </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Scripts de Bootstrap (opcional, si necesitas funcionalidades de JavaScript de Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
